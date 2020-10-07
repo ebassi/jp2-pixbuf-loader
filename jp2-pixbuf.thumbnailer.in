@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=@bindir@/gdk-pixbuf-thumbnailer
+Exec=@bindir@/gdk-pixbuf-thumbnailer -s %s %u %o
+MimeType=image/jp2;image/jpm;image/jpx;image/jpeg2000;image/x-jp2-codestream;

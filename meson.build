@@ -15,6 +15,16 @@ pixbuf_loader_openjpeg = shared_library(
     install_dir: gdk_pixbuf_moduledir,
 )
 
+cdata = configuration_data()
+cdata.set('bindir', get_option('prefix') / get_option('bindir'))
+configure_file(
+  input: 'jp-pixbuf.thumbnailer.in',
+  output: 'jp-pixbuf.thumbnailer',
+  configuration: cdata,
+  install: true,
+  install_dir: get_option('datadir') / 'thumbnailers',
+)
+
 meson.add_install_script(gdk_pixbuf_query_loaders.path(), '--update-cache')
 
 subdir('tests')
